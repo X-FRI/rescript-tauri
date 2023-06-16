@@ -28,3 +28,6 @@ types/
 .merlin
 *.bs.js
 .bsb.lock
+
+## Gentype
+*.tsx
