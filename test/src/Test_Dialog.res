@@ -2,8 +2,8 @@ open Dialog
 
 Test.test(
   "Dialog.ConfirmDialogOptions.make",
-  "",
-  Promise.make(_ => {
-    _ => Js.log(ConfirmDialogOptions.make(~cancel=None, ~ok=None, ~title=None, ~typ=None))
-  }),
+  "true",
+  ConfirmDialogOptions.confirm("hello", "AAAA")->Promise.thenResolve(boolean =>
+    Js.String.make(boolean)
+  ),
 )

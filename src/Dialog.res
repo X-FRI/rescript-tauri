@@ -33,19 +33,10 @@
 /// }
 
 module ConfirmDialogOptions = {
-  type t = {
-    title: option<string>,
-    typ: option<string>,
-    ok: option<string>,
-    cancel: option<string>,
-  }
+  @genType.import("@tauri-apps/api/dialog")
+  type confirm_dialog_options
 
-  @module("tauri-apps/api/dialog")
-  external make: (
-    ~title: option<string>=?,
-    ~typ: option<string>=?,
-    ~ok: option<string>=?,
-    ~cancel: option<string>=?,
-  ) => t = "ConfirmDialogOptions"
+  @genType.import("@tauri-apps/api/dialog")
+  external confirm: string => string => Promise.t<bool> = "confirm"
 }
 
